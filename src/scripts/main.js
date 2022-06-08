@@ -1,4 +1,4 @@
-console.log("Welcome to the main module")
+// console.log("Welcome to the main module")
 
 import { createPlan } from "./plan.js"
 
@@ -6,31 +6,44 @@ import { createPlan } from "./plan.js"
 // so store that value in a variable
 const yearlyPlan = createPlan() 
 
-console.log(yearlyPlan)
+// console.log(yearlyPlan)
 
 
 /* testing my functions*/
 import { createAsparagus } from "./seeds/asparagus.js"
 const asparagusSeed = createAsparagus() //code from directions
-console.log(asparagusSeed) //works! displays obj with three properties: type, height, output - in the developer console.
+// // console.log(asparagusSeed) //works! displays obj with three properties: type, height, output - in the developer console.
 
 import { createPotato } from "./seeds/potato.js"
 const potatoSeed = createPotato()
-console.log(potatoSeed)
+// console.log(potatoSeed)
 
 import { createSoybean } from "./seeds/soybean.js"
 const soybeanSeed = createSoybean()
-console.log(soybeanSeed)
+// console.log(soybeanSeed)
 
 import { createSunflower } from "./seeds/sunflower.js"
 const sunflowerSeed = createSunflower()
-console.log(sunflowerSeed)
+// console.log(sunflowerSeed)
 
 import { createWheat } from "./seeds/wheat.js"
 const wheatSeed = createWheat()
-console.log(wheatSeed)
+// console.log(wheatSeed)
 
 import { createCorn } from "./seeds/corn.js"
+import { addPlant, usePlants } from "./field.js"
 const cornSeed = createCorn()
-console.log(cornSeed)
+// console.log(cornSeed)
 //all work!
+
+
+
+/* testing functions*/
+const sunflowerObject = {
+    type: 'Sunflower',
+    height: 380,
+    output: 3
+}
+addPlant(sunflowerObject) //adds obj to plantsInField array
+let newPlantList = usePlants() //makes a copy of array
+console.log(newPlantList) //works! shows subflowerObject in dev tool console
