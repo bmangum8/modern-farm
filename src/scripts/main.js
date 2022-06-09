@@ -31,7 +31,6 @@ const wheatSeed = createWheat()
 // console.log(wheatSeed)
 
 import { createCorn } from "./seeds/corn.js"
-import { addPlant, usePlants } from "./field.js"
 const cornSeed = createCorn()
 // console.log(cornSeed)
 //all work!
@@ -39,11 +38,29 @@ const cornSeed = createCorn()
 
 
 /* testing functions*/
+import { addPlant, usePlants } from "./field.js"
+
 const sunflowerObject = {
     type: 'Sunflower',
     height: 380,
     output: 3
 }
-addPlant(sunflowerObject) //adds obj to plantsInField array
-let newPlantList = usePlants() //makes a copy of array
-console.log(newPlantList) //works! shows subflowerObject in dev tool console
+// addPlant(sunflowerObject) //adds obj to plantsInField array
+//let newPlantList = usePlants() //makes a copy of array
+//console.log(newPlantList) //works! shows sunflowerObject in dev tool console
+
+
+
+/*
+In the main.js module, invoke the function that plants all of the seeds,  //plantSeeds()
+and then get the plants array from the fields.js module.  //plantsInFieldArray
+Then use console.log() to see if the plants array has been populated correctly.
+*/
+
+//how do I import an array?
+import { plantSeeds } from "./tractor.js" //plantSeeds function plants the seeds
+
+let seedsPlanted = plantSeeds(yearlyPlan)
+console.log(seedsPlanted) // yay works! --need to add corn 
+
+
