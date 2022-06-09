@@ -1,6 +1,7 @@
 const types = ["Soybean", "Corn", "Asparagus", "Wheat", "Potato", "Sunflower"]
 
 export const createPlan = () => {
+    //I changed to let instead of const
     let plan = []
 
     for (let index = 0; index < 3; index++) {
