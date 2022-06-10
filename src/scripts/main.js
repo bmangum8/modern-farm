@@ -6,7 +6,6 @@ import { createPlan } from "./plan.js"
 // this function returns a value, 
 // so store that value in a variable
 const yearlyPlan = createPlan() 
-
 // console.log(yearlyPlan)
 
 
@@ -84,10 +83,29 @@ Then use console.log() to see your new array of harvested food to sell.
 */
 import { harvestPlants } from "./harvester.js"
 
+
 let seedsPlanted = plantSeeds(yearlyPlan) 
 addPlant(seedsPlanted) 
 let newPlantList = usePlants()
 // console.log(newPlantList)   //get the array of plants from the field module
 
 let foodToSell = harvestPlants(newPlantList) // array of plants as an argument
-console.log(foodToSell)
+// console.log(foodToSell) //works
+
+
+/*testing code for #6 Selling Harvest using Flexbox
+In the main.js module, invoke the Catalog function and make sure you pass the array of food as an argument. 
+Make sure your web server is running and refresh the browser. 
+Your DOM should look similar to the image above.
+Please do not try to make it identical. 
+Just make sure you are displaying them in a grid layout.
+*/
+import { catalog } from "./catalog.js"
+
+let htmlRepresentation = catalog(foodToSell)
+const htmlElement = document.querySelector(".container") //finds "container" in HTML document. do i need to add .body after document?
+
+// console.log(htmlElement.innerHTML) //.innerHTML returns inner HTML property of element??
+htmlElement.innerHTML = htmlRepresentation //i can set the innerHTML using = variable
+
+

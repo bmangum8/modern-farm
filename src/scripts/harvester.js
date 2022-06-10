@@ -40,7 +40,7 @@ let numberOfObjects = ''
     }
     return harvestedPlants
 }
-//I don't think the corn is working
+
 
 
 
