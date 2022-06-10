@@ -13,8 +13,25 @@ The function will add the seed to the field
 How do you add something to an array? .push()
 */
 
+/*
+5. Be aware that when planting corn, an array of objects will be 
+provided instead of a single object like all the other type of seeds. 
+
+Investigate the Array.isArray method to check if corn got passed in, or one of the others
+syntax array.isArray(valueToBeChecked); returns true if value is array, false otherwise
+*/
+
 export const addPlant = (seedObject) => {
-    plantsInFieldArray.push(seedObject)
+    // for (const plant of plantsInFieldArray) {
+        if (Array.isArray(seedObject)) {
+            plantsInFieldArray.push(seedObject[0])
+            plantsInFieldArray.push(seedObject[1])
+
+        } else {
+            plantsInFieldArray.push(seedObject)
+            
+    }
+
     return plantsInFieldArray
 }
 
@@ -25,27 +42,15 @@ that returns a copy of the array of plants.
 my thoughts: use spread opperator ...variable
 */
 
-export const usePlants = () => {     
+export const usePlants = () => {
     let copyPlantsInField = [...plantsInFieldArray]
     return copyPlantsInField
 }
 
 
-/*
-5. Be aware that when planting corn, an array of objects will be 
-provided instead of a single object like all the other type of seeds. 
 
-Investigate the Array.isArray method to check if corn got passed in, or one of the others
-syntax array.isArray(valueToBeChecked); returns true if value is array, false otherwise
-*/
 
-for (const plant of plantsInFieldArray) {
-    if (Array.isArray(seedObject) === true) {
-        console.log(true)
-    } else {
-        console.log(false)
-    }
-}
+
 
 
 
